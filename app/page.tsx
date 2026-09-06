@@ -102,7 +102,7 @@ export default function Home() {
 
           {/* Dual Action Buttons */}
           <div className="flex items-center gap-3">
-            <Magnetic strength={0.2}>
+            <Magnetic strength={0.1}>
               <Button
                 variant="outline"
                 size="sm"
@@ -113,7 +113,7 @@ export default function Home() {
                 For Agencies
               </Button>
             </Magnetic>
-            <Magnetic strength={0.25}>
+            <Magnetic strength={0.1}>
               <Button
                 size="sm"
                 onClick={() => handleNavClick("#roles")}
@@ -168,7 +168,7 @@ export default function Home() {
             {/* Action Buttons */}
             <FadeIn direction={AnimationDirection.UP} delay={0.5}>
               <div className="flex flex-col sm:flex-row items-center gap-4">
-                <Magnetic strength={0.3}>
+                <Magnetic strength={0.1}>
                   <Button
                     size="lg"
                     onClick={() => handleNavClick("#roles")}
@@ -179,7 +179,7 @@ export default function Home() {
                   </Button>
                 </Magnetic>
 
-                <Magnetic strength={0.25}>
+                <Magnetic strength={0.1}>
                   <Button
                     variant="outline"
                     size="lg"

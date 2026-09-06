@@ -223,7 +223,7 @@ export function RoleToggleTabs() {
                     <span className="text-xs text-muted-foreground">
                       Contractual WrongFit Verified Listing
                     </span>
-                    <Magnetic strength={0.2}>
+                    <Magnetic strength={0.1}>
                       <Button size="sm" className="rounded-full text-xs font-semibold cursor-pointer">
                         Post A Role Like This
                         <ArrowUpRight className="size-3.5 ml-1" />
@@ -374,7 +374,7 @@ export function RoleToggleTabs() {
                     <span className="text-xs text-muted-foreground">
                       Zero-Spam Verified Profile Guarantee
                     </span>
-                    <Magnetic strength={0.2}>
+                    <Magnetic strength={0.1}>
                       <Button size="sm" className="rounded-full text-xs font-semibold cursor-pointer">
                         Build Your 360° Profile
                         <ArrowUpRight className="size-3.5 ml-1" />

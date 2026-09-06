@@ -9,11 +9,22 @@ import {
   ShieldCheck,
   Users,
 } from "lucide-react";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FadeIn, Magnetic } from "@/components/animations";
-import { EmploymentType, JobSeniority, LocationType, type TransparentJobListing } from "@/types/homepage";
+import {
+  EmploymentType,
+  JobSeniority,
+  LocationType,
+  type TransparentJobListing,
+} from "@/types/homepage";
 
 const VERIFIED_JOBS_CATALOG: readonly TransparentJobListing[] = [
   {
@@ -29,7 +40,8 @@ const VERIFIED_JOBS_CATALOG: readonly TransparentJobListing[] = [
       baseSalary: "$150,000 – $175,000 USD",
       bonusOrEquity: "10% annual bonus + 401k 4% match",
       clientBillingRate: "Billed to brands at $185/hr",
-      benefitsOverview: "100% health, dental, unlimited PTO with 3-week mandatory minimum",
+      benefitsOverview:
+        "100% health, dental, unlimited PTO with 3-week mandatory minimum",
     },
     teamSize: "32 specialists",
     weeklyHours: "Strict 40h/wk cap",
@@ -53,7 +65,8 @@ const VERIFIED_JOBS_CATALOG: readonly TransparentJobListing[] = [
       baseSalary: "£95,000 – £115,000 GBP",
       bonusOrEquity: "Annual revenue profit-share pool (avg £12k in 2024)",
       clientBillingRate: "Billed at £160/hr",
-      benefitsOverview: "Private Bupa healthcare, 30 days holiday, £2,500 gear allowance",
+      benefitsOverview:
+        "Private Bupa healthcare, 30 days holiday, £2,500 gear allowance",
     },
     teamSize: "18 specialists",
     weeklyHours: "37.5h/wk standard",
@@ -61,7 +74,12 @@ const VERIFIED_JOBS_CATALOG: readonly TransparentJobListing[] = [
       "Architect multi-brand enterprise design systems in Figma and code tokens",
       "Lead cross-functional design sprints with fintech and climate clients",
     ],
-    techStack: ["Figma Tokens", "Design Systems", "Prototyping", "Accessibility AA"],
+    techStack: [
+      "Figma Tokens",
+      "Design Systems",
+      "Prototyping",
+      "Accessibility AA",
+    ],
     responseGuaranteedWithinHours: 72,
   },
   {
@@ -77,7 +95,8 @@ const VERIFIED_JOBS_CATALOG: readonly TransparentJobListing[] = [
       baseSalary: "$160,000 – $185,000 USD",
       bonusOrEquity: "0.5% early-stage studio pool equity",
       clientBillingRate: "Retainer-based agency engagements",
-      benefitsOverview: "Health/Vision, mental health stipends, remote setup budget",
+      benefitsOverview:
+        "Health/Vision, mental health stipends, remote setup budget",
     },
     teamSize: "24 specialists",
     weeklyHours: "Asynchronous-first 40h/wk",
@@ -98,12 +117,17 @@ export function VerifiedJobsGrid() {
   const filteredJobs = React.useMemo(() => {
     if (filter === "Engineering") {
       return VERIFIED_JOBS_CATALOG.filter((j) =>
-        j.techStack.some((t) => t.includes("React") || t.includes("Three.js") || t.includes("Node"))
+        j.techStack.some(
+          (t) =>
+            t.includes("React") || t.includes("Three.js") || t.includes("Node"),
+        ),
       );
     }
     if (filter === "Design") {
       return VERIFIED_JOBS_CATALOG.filter((j) =>
-        j.techStack.some((t) => t.includes("Figma") || t.includes("Design Systems"))
+        j.techStack.some(
+          (t) => t.includes("Figma") || t.includes("Design Systems"),
+        ),
       );
     }
     return VERIFIED_JOBS_CATALOG;
@@ -125,7 +149,8 @@ export function VerifiedJobsGrid() {
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="text-sm text-muted-foreground mt-2 max-w-lg">
-              Every role below has passed our 100% compensation & authenticity audit. No hidden salaries, no unverified claims.
+              Every role below has passed our 100% compensation & authenticity
+              audit. No hidden salaries, no unverified claims.
             </p>
           </FadeIn>
         </div>
@@ -173,7 +198,9 @@ export function VerifiedJobsGrid() {
 
               <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1">
                 <Building2 className="size-3.5 text-primary" />
-                <span className="font-medium text-foreground">{job.agencyName}</span>
+                <span className="font-medium text-foreground">
+                  {job.agencyName}
+                </span>
                 <span>·</span>
                 <MapPin className="size-3" />
                 <span>{job.locationCity}</span>
@@ -222,8 +249,11 @@ export function VerifiedJobsGrid() {
                 <Clock className="size-3" />
                 Answers in &lt; {job.responseGuaranteedWithinHours}h
               </span>
-              <Magnetic strength={0.2}>
-                <Button size="sm" className="rounded-lg text-xs font-semibold cursor-pointer">
+              <Magnetic strength={0.1}>
+                <Button
+                  size="sm"
+                  className="rounded-lg text-xs font-semibold cursor-pointer"
+                >
                   View Full Post
                 </Button>
               </Magnetic>
@@ -234,4 +264,3 @@ export function VerifiedJobsGrid() {
     </section>
   );
 }
-
