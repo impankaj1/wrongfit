@@ -7,10 +7,6 @@ import { useGSAP } from "@gsap/react";
 import { ANIMATION_CONFIG } from "@/lib/constants/animation";
 import { ParallaxDirection, type ParallaxProps } from "@/types/animation";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
-
 export function Parallax({
   children,
   speed = ANIMATION_CONFIG.PARALLAX_SPEED_DEFAULT,
@@ -23,8 +19,10 @@ export function Parallax({
 
   useGSAP(
     () => {
+      gsap.registerPlugin(ScrollTrigger);
+
       const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (prefersReducedMotion || !containerRef.current || !targetRef.current) {
@@ -46,7 +44,7 @@ export function Parallax({
               end: "bottom top",
               scrub: true,
             },
-          }
+          },
         );
       } else {
         const xMovement = speed * 100;
@@ -62,11 +60,11 @@ export function Parallax({
               end: "bottom top",
               scrub: true,
             },
-          }
+          },
         );
       }
     },
-    { scope: containerRef, dependencies: [speed, direction] }
+    { scope: containerRef, dependencies: [speed, direction] },
   );
 
   return (
@@ -77,4 +75,3 @@ export function Parallax({
     </div>
   );
 }
-

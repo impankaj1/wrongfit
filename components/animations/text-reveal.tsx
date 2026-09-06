@@ -5,14 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { ANIMATION_CONFIG } from "@/lib/constants/animation";
-import {
-  TextRevealMode,
-  type TextRevealProps,
-} from "@/types/animation";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
+import { TextRevealMode, type TextRevealProps } from "@/types/animation";
 
 export function TextReveal({
   text,
@@ -38,8 +31,10 @@ export function TextReveal({
 
   useGSAP(
     () => {
+      gsap.registerPlugin(ScrollTrigger);
+
       const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (prefersReducedMotion || !containerRef.current) {
@@ -73,13 +68,21 @@ export function TextReveal({
           y: "110%",
           opacity: 0,
         },
-        animateProps
+        animateProps,
       );
     },
     {
       scope: containerRef,
-      dependencies: [tokens, delay, duration, stagger, ease, triggerOnScroll, once],
-    }
+      dependencies: [
+        tokens,
+        delay,
+        duration,
+        stagger,
+        ease,
+        triggerOnScroll,
+        once,
+      ],
+    },
   );
 
   return (
@@ -101,4 +104,3 @@ export function TextReveal({
     </Component>
   );
 }
-

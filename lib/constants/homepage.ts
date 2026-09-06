@@ -77,16 +77,25 @@ export const MOCK_TRANSPARENT_JOB: TransparentJobListing = {
     baseSalary: "$165,000 – $185,000 USD",
     bonusOrEquity: "15% annual profit-share bonus + 0.25% studio equity",
     clientBillingRate: "Billed to enterprise clients at $195/hr",
-    benefitsOverview: "100% health/dental/vision coverage, 30 days PTO, $4,000 annual equipment/learning stipend",
+    benefitsOverview:
+      "100% health/dental/vision coverage, 30 days PTO, $4,000 annual equipment/learning stipend",
   },
   teamSize: "28 people (Design: 8, Engineering: 14, Strategy: 6)",
-  weeklyHours: "Strict 40h/week cap, asynchronous-first with core hours 10am–2pm EST",
+  weeklyHours:
+    "Strict 40h/week cap, asynchronous-first with core hours 10am–2pm EST",
   dayToDayFocus: [
     "Architect reusable GSAP & Three.js interactive components for brand launches",
     "Partner with creative directors to bridge Figma prototypes into production Next.js code",
     "Conduct code reviews and mentor junior creative technologists",
   ],
-  techStack: ["Next.js 16", "React 19", "GSAP", "Tailwind CSS v4", "TypeScript", "Three.js / WebGL"],
+  techStack: [
+    "Next.js 16",
+    "React 19",
+    "GSAP",
+    "Tailwind CSS v4",
+    "TypeScript",
+    "Three.js / WebGL",
+  ],
   responseGuaranteedWithinHours: 72,
 };
 
@@ -114,13 +123,15 @@ export const MOCK_CANDIDATE_PROFILE: CandidateProfilePreview = {
       role: "Lead Interface Technologist",
       company: "Studio Monolith (3 years)",
       duration: "2021 – 2024",
-      keyAchievement: "Delivered 14 Webby and AWAWDS winning agency websites using Next.js & GSAP.",
+      keyAchievement:
+        "Delivered 14 Webby and AWAWDS winning agency websites using Next.js & GSAP.",
     },
     {
       role: "Front-End Creative Engineer",
       company: "Koto Creative",
       duration: "2019 – 2021",
-      keyAchievement: "Built the global design system for a fintech unicorn, reducing production turnaround by 40%.",
+      keyAchievement:
+        "Built the global design system for a fintech unicorn, reducing production turnaround by 40%.",
     },
   ],
   verifiedCaseStudies: [
@@ -133,29 +144,45 @@ export const MOCK_CANDIDATE_PROFILE: CandidateProfilePreview = {
     targetCompensation: "€95,000 – €110,000 / $130,000 – $150,000 USD",
     preferredModel: LocationType.REMOTE,
   },
-  keySkills: ["GSAP Animations", "React 19", "Next.js", "TypeScript", "Tailwind CSS", "Three.js", "Figma"],
+  keySkills: [
+    "GSAP Animations",
+    "React 19",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Three.js",
+    "Figma",
+  ],
 };
 
 export const COMPARISON_POINTS: readonly ComparisonPoint[] = [
   {
     topic: "Salary & Compensation",
-    traditionalWay: "Hidden or absurd ranges like '$50k - $250k' that waste weeks of interviews before revealing the lowball offer.",
-    wrongfitWay: "Strict, contractually bound base salary, explicit bonus criteria, equity stakes, and client billing visibility.",
+    traditionalWay:
+      "Hidden or absurd ranges like '$50k - $250k' that waste weeks of interviews before revealing the lowball offer.",
+    candidWay:
+      "Strict, contractually bound base salary, explicit bonus criteria, equity stakes, and client billing visibility.",
   },
   {
     topic: "Feedback & Ghosting",
-    traditionalWay: "Candidates get ghosted after 4 rounds of interviews, take-home tests, and hours of preparation.",
-    wrongfitWay: "Enforced 5-day response SLA with structured decision notes on every submission.",
+    traditionalWay:
+      "Candidates get ghosted after 4 rounds of interviews, take-home tests, and hours of preparation.",
+    candidWay:
+      "Enforced 5-day response SLA with structured decision notes on every submission.",
   },
   {
     topic: "Company Authenticity",
-    traditionalWay: "Glossy PR descriptions that conceal toxic crunch hours, micro-management, and high turnover.",
-    wrongfitWay: "Verified weekly hour caps, team size breakdowns, tech debt assessments, and authentic studio profiles.",
+    traditionalWay:
+      "Glossy PR descriptions that conceal toxic crunch hours, micro-management, and high turnover.",
+    candidWay:
+      "Verified weekly hour caps, team size breakdowns, tech debt assessments, and authentic studio profiles.",
   },
   {
     topic: "Candidate Profiles",
-    traditionalWay: "Keyword-stuffed, AI-generated resumes with inflated titles and omitted histories that mislead hiring managers.",
-    wrongfitWay: "360° verified education, authenticated past tenures, demonstrable code/design proof, and explicit pace preferences.",
+    traditionalWay:
+      "Keyword-stuffed, AI-generated resumes with inflated titles and omitted histories that mislead hiring managers.",
+    candidWay:
+      "360° verified education, authenticated past tenures, demonstrable code/design proof, and explicit pace preferences.",
   },
 ] as const;
 
@@ -165,21 +192,24 @@ export const TRANSPARENCY_PLEDGE: readonly PledgeItem[] = [
     title: "The Zero-Ambiguity Compensation Mandate",
     rule: "No role can be published without an exact, verified compensation range backed by studio budget.",
     appliesTo: "Agencies",
-    penaltyOrBenefit: "Guarantees candidates never waste time on lowball offers.",
+    penaltyOrBenefit:
+      "Guarantees candidates never waste time on lowball offers.",
   },
   {
     id: "pledge-2",
     title: "The 360° Authenticated Profile Mandate",
     rule: "Candidates must provide verified educational background, genuine work history, and portfolio proof.",
     appliesTo: "Candidates",
-    penaltyOrBenefit: "Gives agencies confidence they are interviewing real, vetted experts.",
+    penaltyOrBenefit:
+      "Gives agencies confidence they are interviewing real, vetted experts.",
   },
   {
     id: "pledge-3",
     title: "The Anti-Ghosting SLA Protocol",
     rule: "Every candidate application must receive a formal decision or stage update within 5 business days.",
     appliesTo: "Agencies",
-    penaltyOrBenefit: "Violating agencies lose verified status and posting privileges.",
+    penaltyOrBenefit:
+      "Violating agencies lose verified status and posting privileges.",
   },
   {
     id: "pledge-4",
@@ -193,33 +223,35 @@ export const TRANSPARENCY_PLEDGE: readonly PledgeItem[] = [
 export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     category: "General",
-    question: "Why is the platform called WrongFit?",
+    question: "Why is the platform called Candid?",
     answer:
-      "Most bad hires and unhappy jobs happen because conventional job boards encourage both sides to hide the truth: companies hide salary and workload realities, while candidates send vague, inflated resumes. 'WrongFit' is the antidote—we enforce 100% radical transparency so that neither side ever accepts a wrong fit again.",
+      "Most bad hires and unhappy jobs happen because conventional job boards encourage both sides to hide the truth: companies hide salary and workload realities, while candidates send vague, inflated resumes. Candid is the antidote—we enforce 100% radical transparency so that neither side ever accepts a mismatched hire again.",
   },
   {
     category: "For Agencies",
-    question: "Why do agencies have to post verified compensation and client billing details?",
+    question:
+      "Why do agencies have to post verified compensation and client billing details?",
     answer:
-      "Top specialists refuse to apply to postings with hidden salaries or vague ranges. By providing full compensation transparency up front, WrongFit agencies receive 4x more qualified, senior applicants and close hires in under 14 days without protracted salary renegotiations.",
+      "Top specialists refuse to apply to postings with hidden salaries or vague ranges. By providing full compensation transparency up front, Candid agencies receive 4x more qualified, senior applicants and close hires in under 14 days without protracted salary renegotiations.",
   },
   {
     category: "For Agencies",
-    question: "What happens if an agency does not respond within the 5-day SLA?",
+    question:
+      "What happens if an agency does not respond within the 5-day SLA?",
     answer:
       "Our anti-ghosting protocol monitors review timestamps. If an agency repeatedly fails to provide feedback within 5 business days, their 'Verified Transparent' badge is suspended and active listings are paused.",
   },
   {
     category: "For Candidates",
-    question: "Why do candidates need to fill out a complete educational and career history?",
+    question:
+      "Why do candidates need to fill out a complete educational and career history?",
     answer:
-      "Because agencies on WrongFit are held to strict transparency standards, they require high-trust candidate submissions in return. A verified 360° profile eliminates keyword spam, verifies true expertise, and ensures you stand out directly to studio founders and technical directors.",
+      "Because agencies on Candid are held to strict transparency standards, they require high-trust candidate submissions in return. A verified 360° profile eliminates keyword spam, verifies true expertise, and ensures you stand out directly to studio founders and technical directors.",
   },
   {
     category: "For Candidates",
-    question: "Is WrongFit free for job seekers and specialists?",
+    question: "Is Candid free for job seekers and specialists?",
     answer:
       "Yes, 100% free forever for candidates. You can build your verified 360° profile, browse transparent studio opportunities, and apply directly without middleman recruiters taking a cut of your compensation.",
   },
 ] as const;
-

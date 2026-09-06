@@ -11,10 +11,6 @@ import {
   type FadeInProps,
 } from "@/types/animation";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
-
 export function FadeIn({
   children,
   variant = ANIMATION_CONFIG.VARIANT_DEFAULT,
@@ -33,8 +29,10 @@ export function FadeIn({
 
   useGSAP(
     () => {
+      gsap.registerPlugin(ScrollTrigger);
+
       const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (prefersReducedMotion || !containerRef.current) {
@@ -92,7 +90,20 @@ export function FadeIn({
 
       gsap.fromTo(targets, initialProps, animateProps);
     },
-    { scope: containerRef, dependencies: [variant, direction, delay, duration, distance, ease, triggerOnScroll, stagger, once] }
+    {
+      scope: containerRef,
+      dependencies: [
+        variant,
+        direction,
+        delay,
+        duration,
+        distance,
+        ease,
+        triggerOnScroll,
+        stagger,
+        once,
+      ],
+    },
   );
 
   return (
@@ -101,4 +112,3 @@ export function FadeIn({
     </div>
   );
 }
-

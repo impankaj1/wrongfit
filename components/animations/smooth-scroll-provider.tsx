@@ -6,11 +6,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "lenis/dist/lenis.css";
 import { ANIMATION_CONFIG } from "@/lib/constants/animation";
-import type { ScrollToOptions, SmoothScrollContextValue } from "@/types/animation";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import type {
+  ScrollToOptions,
+  SmoothScrollContextValue,
+} from "@/types/animation";
 
 let lenisStore: Lenis | null = null;
 const lenisListeners = new Set<() => void>();
@@ -52,12 +51,14 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const lenis = React.useSyncExternalStore(
     subscribeToLenis,
     getLenisSnapshot,
-    getLenisServerSnapshot
+    getLenisServerSnapshot,
   );
 
   React.useEffect(() => {
     // Respect accessibility settings
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
     if (prefersReducedMotion) {
       return;
@@ -100,16 +101,23 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
         });
       } else if (typeof window !== "undefined") {
         if (typeof target === "number") {
-          window.scrollTo({ top: target, behavior: options?.immediate ? "auto" : "smooth" });
+          window.scrollTo({
+            top: target,
+            behavior: options?.immediate ? "auto" : "smooth",
+          });
         } else if (typeof target === "string") {
           const element = document.querySelector(target);
-          element?.scrollIntoView({ behavior: options?.immediate ? "auto" : "smooth" });
+          element?.scrollIntoView({
+            behavior: options?.immediate ? "auto" : "smooth",
+          });
         } else if (target instanceof HTMLElement) {
-          target.scrollIntoView({ behavior: options?.immediate ? "auto" : "smooth" });
+          target.scrollIntoView({
+            behavior: options?.immediate ? "auto" : "smooth",
+          });
         }
       }
     },
-    [lenis]
+    [lenis],
   );
 
   const contextValue = React.useMemo<SmoothScrollContextValue>(
@@ -117,7 +125,7 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
       scrollTo,
       lenis,
     }),
-    [scrollTo, lenis]
+    [scrollTo, lenis],
   );
 
   return (
@@ -126,4 +134,3 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     </SmoothScrollContext.Provider>
   );
 }
-

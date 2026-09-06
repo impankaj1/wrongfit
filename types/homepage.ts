@@ -88,7 +88,7 @@ export interface CandidateProfilePreview {
 export interface ComparisonPoint {
   topic: string;
   traditionalWay: string;
-  wrongfitWay: string;
+  candidWay: string;
 }
 
 export interface PledgeItem {

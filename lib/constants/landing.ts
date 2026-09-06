@@ -6,11 +6,11 @@ import {
 } from "@/types/landing";
 
 export const HERO_CONFIG = {
-  BADGE: "Introducing WrongFit 2.0",
+  BADGE: "Introducing Candid 2.0",
   TITLE_LINE_1: "Stop settling for the",
   TITLE_LINE_2: "wrong fit.",
   SUBTITLE:
-    "WrongFit connects top design, engineering, and product talent directly with verified creative agencies and high-growth studios.",
+    "Candid connects top design, engineering, and product talent directly with verified creative agencies and high-growth studios.",
   CTA_PRIMARY: "Explore Open Roles",
   CTA_SECONDARY: "Post an Opportunity",
 } as const;
@@ -91,4 +91,3 @@ export const SAMPLE_JOBS: readonly JobListing[] = [
     matchScore: 99,
   },
 ] as const;
-

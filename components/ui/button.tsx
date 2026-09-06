@@ -9,7 +9,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/80",
         outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "border-foreground/25 bg-background text-foreground hover:bg-muted hover:border-foreground/40 aria-expanded:bg-muted aria-expanded:text-foreground dark:border-foreground/20 dark:bg-input/30 dark:hover:bg-input/50 dark:hover:border-foreground/35",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
@@ -17,6 +17,12 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
+        // Use on bg-primary surfaces — inverts the default colour relationship
+        inverted:
+          "bg-primary-foreground text-primary hover:bg-primary-foreground/90",
+        // Outlined version for bg-primary surfaces
+        "inverted-outline":
+          "border border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10",
       },
       size: {
         default:

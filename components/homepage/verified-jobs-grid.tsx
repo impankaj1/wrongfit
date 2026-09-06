@@ -134,8 +134,11 @@ export function VerifiedJobsGrid() {
   }, [filter]);
 
   return (
-    <section id="roles" className="py-24 container mx-auto px-6 md:px-12">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+    <section
+      id="roles"
+      className="py-12 container mx-auto px-4 sm:px-6 md:px-12"
+    >
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-4">
         <div>
           <FadeIn>
             <Badge variant="secondary" className="mb-3 text-xs font-semibold">
@@ -143,12 +146,12 @@ export function VerifiedJobsGrid() {
             </Badge>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight">
+            <h2 className="font-heading text-h2 font-bold">
               Featured Verified Roles
             </h2>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="text-sm text-muted-foreground mt-2 max-w-lg">
+            <p className="text-lead text-muted-foreground mt-2 max-w-lg">
               Every role below has passed our 100% compensation & authenticity
               audit. No hidden salaries, no unverified claims.
             </p>
@@ -156,7 +159,7 @@ export function VerifiedJobsGrid() {
         </div>
 
         {/* Filter Pills */}
-        <FadeIn delay={0.2} className="mt-6 md:mt-0 flex gap-2">
+        <FadeIn delay={0.2} className="flex flex-wrap gap-2">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -174,8 +177,11 @@ export function VerifiedJobsGrid() {
         </FadeIn>
       </div>
 
-      {/* Jobs Grid */}
-      <FadeIn stagger={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Jobs Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
+      <FadeIn
+        stagger={0.1}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         {filteredJobs.map((job) => (
           <Card
             key={job.id}
@@ -183,22 +189,22 @@ export function VerifiedJobsGrid() {
           >
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between gap-2 mb-2">
-                <Badge variant="outline" className="text-[11px] font-medium">
+                <Badge variant="outline" className="text-xs font-medium">
                   {job.locationType}
                 </Badge>
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
                   <ShieldCheck className="size-3" />
                   Verified Budget
                 </span>
               </div>
 
-              <CardTitle className="text-lg leading-snug font-heading font-bold">
+              <CardTitle className="text-h4 font-heading font-bold">
                 {job.title}
               </CardTitle>
 
               <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1">
                 <Building2 className="size-3.5 text-primary" />
-                <span className="font-medium text-foreground">
+                <span className="font-medium text-foreground text-small">
                   {job.agencyName}
                 </span>
                 <span>·</span>
@@ -210,17 +216,17 @@ export function VerifiedJobsGrid() {
             <CardContent className="space-y-3.5 text-xs pt-0">
               {/* Compensation Box */}
               <div className="rounded-lg bg-muted/60 p-3 border border-border/50">
-                <div className="flex items-center gap-1.5 text-foreground font-bold text-sm">
+                <div className="flex items-center gap-1.5 text-foreground font-bold text-base">
                   <DollarSign className="size-4 text-primary shrink-0" />
                   <span>{job.compensation.baseSalary}</span>
                 </div>
-                <span className="text-[11px] text-muted-foreground block mt-1">
+                <span className="text-xs text-muted-foreground block mt-1">
                   {job.compensation.bonusOrEquity}
                 </span>
               </div>
 
               {/* Workload & Team Size */}
-              <div className="grid grid-cols-2 gap-2 text-[11px] text-muted-foreground">
+              <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Clock className="size-3 text-primary" />
                   <span>{job.weeklyHours}</span>
@@ -236,7 +242,7 @@ export function VerifiedJobsGrid() {
                 {job.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground"
+                    className="rounded bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
                   >
                     {tech}
                   </span>
@@ -245,11 +251,11 @@ export function VerifiedJobsGrid() {
             </CardContent>
 
             <CardFooter className="pt-3 border-t border-border/40 flex items-center justify-between">
-              <span className="text-[11px] font-medium text-primary flex items-center gap-1">
+              <span className="text-xs font-medium text-primary flex items-center gap-1">
                 <Clock className="size-3" />
                 Answers in &lt; {job.responseGuaranteedWithinHours}h
               </span>
-              <Magnetic strength={0.1}>
+              <Magnetic strength={0.2}>
                 <Button
                   size="sm"
                   className="rounded-lg text-xs font-semibold cursor-pointer"

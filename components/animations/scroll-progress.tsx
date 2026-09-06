@@ -5,17 +5,15 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
-
 export function ScrollProgress({ className }: { className?: string }) {
   const barRef = React.useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
+      gsap.registerPlugin(ScrollTrigger);
+
       const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (prefersReducedMotion || !barRef.current) return;
@@ -31,7 +29,7 @@ export function ScrollProgress({ className }: { className?: string }) {
         },
       });
     },
-    { scope: barRef }
+    { scope: barRef },
   );
 
   return (
@@ -43,4 +41,3 @@ export function ScrollProgress({ className }: { className?: string }) {
     </div>
   );
 }
-
